@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class TheIntellifyAnimation : MonoBehaviour
 {
-    [SerializeField] private RectTransform iconInfoRectTransform;
-    [SerializeField] private RectTransform revealImage;
+    [SerializeField] private GameObject instructionCanvasObj;
 
     [SerializeField] private RectTransform productRectTransform;
     private Image productImage;
@@ -35,14 +36,6 @@ public class TheIntellifyAnimation : MonoBehaviour
     private Image iconInfoImage;
 
     [Space]
-    [SerializeField] private Vector2 mainTittleInitialSizeValue = new Vector3(120, 120);
-    [SerializeField] private Vector2 mainTittleFinalSizevalue = new Vector3(880, 255);
-
-    [Space]
-    [SerializeField] private CanvasGroup iconCanvasGroup;
-    [SerializeField] private CanvasGroup iconInfoCanvasGroup;
-
-    [Space]
     [SerializeField] private float iconInfoScalingAnimationDuration = 2f;
     [SerializeField] private float iconInfoRoundAnimationDuration = 2f;
 
@@ -60,25 +53,36 @@ public class TheIntellifyAnimation : MonoBehaviour
     [Space]
     [SerializeField] private Vector2 usecaseInitalSize;
     [SerializeField] private Vector2 usecaseFinalSize;
+    [SerializeField] private Vector2 useCaseInfoSize = new Vector2(1480, 470);
+
+    [Space]
+    [SerializeField] private List<Image> accentImages = new List<Image>();
+    [SerializeField] private Color accentColor;
+    [SerializeField] private TMP_Text useCaseInfoText;
+    [TextArea]
+    [SerializeField] private string useCaseInfoString;
 
     private void Awake()
     {
-        iconInfoImage = iconInfoRectTransform.GetComponent<Image>();
-
         productImage = productRectTransform.GetComponent<Image>();
         functionImage = functionRectTransform.GetComponent<Image>();
         categoryImage = categoryRectTransform.GetComponent<Image>();
         useCaseImage = userCaseRectTransform.GetComponent<Image>();
+
+        foreach (Image _image in accentImages)
+        {
+            _image.color = accentColor; 
+        }
+        useCaseInfoText.text = useCaseInfoString;
+    }
+
+    private void Start()
+    {
+        ResetAnimation();
     }
 
     private void ResetAnimation()
     {
-        iconInfoRectTransform.sizeDelta = mainTittleInitialSizeValue;
-        revealImage.sizeDelta = new Vector2(531, 120);
-
-        iconCanvasGroup.alpha = 1;
-        iconInfoCanvasGroup.alpha = 0;
-
         productRectTransform.sizeDelta = Vector2.zero;
         categoryRectTransform.sizeDelta = Vector2.zero;
         functionRectTransform.sizeDelta = Vector2.zero;
@@ -107,29 +111,15 @@ public class TheIntellifyAnimation : MonoBehaviour
     {
         ResetAnimation();
 
-        LeanTween.size(iconInfoRectTransform, mainTittleFinalSizevalue, iconInfoScalingAnimationDuration).setEaseInOutSine();
-        LeanTween.alphaCanvas(iconCanvasGroup, 0, iconInfoScalingAnimationDuration).setEaseInOutSine()
-            .setOnComplete(() =>
+        LeanTween.size(productRectTransform, new Vector2(60, 60), 0.2f).setEaseInOutSine().setOnComplete(() =>
         {
-            iconInfoCanvasGroup.alpha = 1;
-            LeanTween.size(revealImage, new Vector2(0, 120), 0.25f).setEaseInOutSine().setOnComplete(() =>
+            LeanTween.size(functionRectTransform, new Vector2(60, 60), 0.2f).setEaseInOutSine().setOnComplete(() =>
             {
-                LeanTween.size(productRectTransform, new Vector2(60, 60), 0.2f).setEaseInOutSine().setOnComplete(() =>
+                LeanTween.size(categoryRectTransform, new Vector2(60, 60), 0.2f).setEaseInOutSine().setOnComplete(() =>
                 {
-                    LeanTween.size(functionRectTransform, new Vector2(60, 60), 0.2f).setEaseInOutSine().setOnComplete(() =>
-                    {
-                        LeanTween.size(categoryRectTransform, new Vector2(60, 60), 0.2f).setEaseInOutSine().setOnComplete(()=>
-                        {
-                            ProductCardAnimation();
-                        });
-                    });
+                    ProductCardAnimation();
                 });
             });
-        });
-
-        LeanTween.value(gameObject, 1, 3.8f, iconInfoRoundAnimationDuration).setEaseInOutSine().setOnUpdate((float value) =>
-        {
-            iconInfoImage.pixelsPerUnitMultiplier = value;
         });
     }
 
@@ -194,21 +184,43 @@ public class TheIntellifyAnimation : MonoBehaviour
             {
                 LeanTween.alphaCanvas(informationMainHolder, 1, 0.3f).setEaseInOutSine().setOnComplete(()=>
                 {
-                    LeanTween.size(infromationTextholder, new Vector2(1480, 470), 0.3f).setEaseInOutSine();
+                    LeanTween.size(infromationTextholder, useCaseInfoSize, 0.3f).setEaseInOutSine();
                     LeanTween.alphaCanvas(informationText, 1, 0.3f).setEaseInOutSine();
                 });
             });
         });
     }
 
+    [ContextMenu("On Seen")]
     public void _OnSeen()
     {
-        ResetAnimation();
+        instructionCanvasObj.SetActive(false);
+        startTimer = false;
+        timer = resetTime;
+
+        //ResetAnimation();
         StartAnimation();
     }
 
+    float timer;
+    float resetTime = 0.3f;
+    bool startTimer = false;
     public void _OnNotSeen()
     {
-        LeanTween.reset();
+        startTimer = true;
+
+        if (timer < 0)
+        {
+            LeanTween.reset();
+            ResetAnimation();
+        }
+    }
+
+    private void Update()
+    {
+        if (startTimer)
+        {
+            timer -= Time.deltaTime;
+        }
     }
 }
