@@ -1,10 +1,12 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class TheIntellifyAnimation : MonoBehaviour
 {
+    [SerializeField] private GameObject instructionCanvasObj;
+
     [SerializeField] private RectTransform productRectTransform;
     private Image productImage;
     [SerializeField] private CanvasGroup productImageInformation;
@@ -51,6 +53,7 @@ public class TheIntellifyAnimation : MonoBehaviour
     [Space]
     [SerializeField] private Vector2 usecaseInitalSize;
     [SerializeField] private Vector2 usecaseFinalSize;
+    [SerializeField] private Vector2 useCaseInfoSize = new Vector2(1480, 470);
 
     [Space]
     [SerializeField] private List<Image> accentImages = new List<Image>();
@@ -71,6 +74,11 @@ public class TheIntellifyAnimation : MonoBehaviour
             _image.color = accentColor; 
         }
         useCaseInfoText.text = useCaseInfoString;
+    }
+
+    private void Start()
+    {
+        ResetAnimation();
     }
 
     private void ResetAnimation()
@@ -176,7 +184,7 @@ public class TheIntellifyAnimation : MonoBehaviour
             {
                 LeanTween.alphaCanvas(informationMainHolder, 1, 0.3f).setEaseInOutSine().setOnComplete(()=>
                 {
-                    LeanTween.size(infromationTextholder, new Vector2(1480, 470), 0.3f).setEaseInOutSine();
+                    LeanTween.size(infromationTextholder, useCaseInfoSize, 0.3f).setEaseInOutSine();
                     LeanTween.alphaCanvas(informationText, 1, 0.3f).setEaseInOutSine();
                 });
             });
@@ -186,12 +194,33 @@ public class TheIntellifyAnimation : MonoBehaviour
     [ContextMenu("On Seen")]
     public void _OnSeen()
     {
-        ResetAnimation();
+        instructionCanvasObj.SetActive(false);
+        startTimer = false;
+        timer = resetTime;
+
+        //ResetAnimation();
         StartAnimation();
     }
 
+    float timer;
+    float resetTime = 0.3f;
+    bool startTimer = false;
     public void _OnNotSeen()
     {
-        //LeanTween.reset();
+        startTimer = true;
+
+        if (timer < 0)
+        {
+            LeanTween.reset();
+            ResetAnimation();
+        }
+    }
+
+    private void Update()
+    {
+        if (startTimer)
+        {
+            timer -= Time.deltaTime;
+        }
     }
 }
