@@ -409,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &32394271
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1359,12 +1359,12 @@ GameObject:
   - component: {fileID: 199583108}
   - component: {fileID: 199583107}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Blur image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &199583106
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1896,7 +1896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &259492952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1970,7 +1970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &272920813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,7 +2074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &284435841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2358,7 +2358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &308710065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,7 +2838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &388862369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3210,7 +3210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &427482731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3700,7 +3700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &462432032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4660,7 +4660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &530495404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6675,11 +6675,9 @@ MonoBehaviour:
   - {fileID: 430098758}
   accentColor: {r: 0.7843138, g: 0.058823533, b: 0.18039216, a: 1}
   useCaseInfoText: {fileID: 477336898}
-  useCaseInfoString: An AI/ LLM solution that can provide comprehensive document
-    synopses, including the purpose of the documents based on predefined rules, while
-    also enabling data comparison between documents, accommodating diverse content
-    and structures, performing advanced data analysis and forecasting, and accurately
-    detecting anomalies.
+  useCaseInfoString: A scalable and cost-effective industrial robot for hard surface
+    cleaning and carpet vacuuming, featuring advanced navigation, autonomous operation,
+    efficient water and waste management, and real-time performance monitoring.
 --- !u!4 &700236531
 Transform:
   m_ObjectHideFlags: 0
@@ -6985,7 +6983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &733658792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8391,7 +8389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &897006420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8813,7 +8811,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 9.9991455}
-  m_SizeDelta: {x: 1480, y: 400}
+  m_SizeDelta: {x: 1480, y: 470}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &941267375
 MonoBehaviour:
@@ -8870,7 +8868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &964364100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9752,7 +9750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1061378848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9878,9 +9876,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Optimize reconciliation exceptions management process by leveraging advanced
-    AI-powered anomaly resolution technology for efficient assignment and monitoring
-    of exceptions until closure
+  m_text: An advanced SOP creator that de-risks operational performance and regulatory
+    exposure by addressing execution variability, while automating SOP creation,
+    ensuring consistent process conformance at both process and employee levels,
+    and identifying high-impact process improvements for maximum ROI.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1f30da71df92d84c8235d2f17731111, type: 2}
   m_sharedMaterial: {fileID: 5358472018453203365, guid: a1f30da71df92d84c8235d2f17731111, type: 2}
@@ -10935,7 +10934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1176505471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11009,7 +11008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1180231583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11584,7 +11583,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -350}
-  m_SizeDelta: {x: 1500, y: 520}
+  m_SizeDelta: {x: 1500, y: 600}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1315177552
 GameObject:
@@ -12204,7 +12203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1374665220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12330,7 +12329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386085024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12846,7 +12845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1427969569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13354,7 +13353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1468044110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15554,15 +15553,16 @@ MonoBehaviour:
   usecaseInitialPos: {x: 0, y: -200}
   usecaseFinalPos: {x: 0, y: -350}
   usecaseInitalSize: {x: 50, y: 50}
-  usecaseFinalSize: {x: 1500, y: 520}
-  useCaseInfoSize: {x: 1480, y: 400}
+  usecaseFinalSize: {x: 1500, y: 600}
+  useCaseInfoSize: {x: 1480, y: 470}
   accentImages:
   - {fileID: 1312544885}
   accentColor: {r: 0.3647059, g: 0.48235297, b: 0.6039216, a: 1}
   useCaseInfoText: {fileID: 1064701379}
-  useCaseInfoString: Optimize reconciliation exceptions management process by leveraging
-    advanced AI-powered anomaly resolution technology for efficient assignment and
-    monitoring of exceptions until closure
+  useCaseInfoString: An advanced SOP creator that de-risks operational performance
+    and regulatory exposure by addressing execution variability, while automating
+    SOP creation, ensuring consistent process conformance at both process and employee
+    levels, and identifying high-impact process improvements for maximum ROI.
 --- !u!4 &1771240982
 Transform:
   m_ObjectHideFlags: 0
@@ -15591,7 +15591,7 @@ GameObject:
   - component: {fileID: 1785225892}
   - component: {fileID: 1785225894}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Main card image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17448,7 +17448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2095342097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18092,7 +18092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1106484429159183352
 GameObject:
   m_ObjectHideFlags: 0
@@ -18408,7 +18408,7 @@ MonoBehaviour:
   useCaseInfoString: An AR-enabled campus tour that provides an immersive, interactive,
     and self-guided experience, allowing employees to explore our state-of-the-art
     facilities at their convenience. The solution should ensure comprehensive access
-    to all campus amenities and promote cost and time efficiency
+    to all campus amenities and promote cost and time efficiency.
 --- !u!114 &2489274426924238281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18498,7 +18498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a46277bb2e24858882d73be7e2e0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: ReceptionMarkerImage.zpt
+  Target: The Intellify.zpt
   Orientation: 0
   PreviewImageObject: {fileID: 4937770693499969453}
   OnSeenEvent:
@@ -18644,7 +18644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3699933555993348495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19528,7 +19528,7 @@ GameObject:
   - component: {fileID: 6128911901343178594}
   - component: {fileID: 7858974090191371596}
   m_Layer: 5
-  m_Name: Category information
+  m_Name: Product information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
